@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class MenuGaragem {
     public void Menu() {
         Scanner option = new Scanner(System.in);
+        ControllerGaragem funcoesGaragem = new ControllerGaragem();
         int op;
 
         do {
@@ -23,30 +24,38 @@ public class MenuGaragem {
             switch (op) {
                 case 1:
                     System.out.println("Entre aqui");
+                    funcoesGaragem.inserirGaragem();
                     break;
                 case 2:
+                    funcoesGaragem.listarGaragem();
                     System.out.println("Entre no segundo");
                     break;
                 case 3:
+                    funcoesGaragem.editarGaragem();
                     System.out.println("Entre no terceiro");
                     break;
                 case 4:
+                    funcoesGaragem.excluirGaragem();
                     System.out.println("Entre no quarto");
                     break;
                 case 5:
+                    funcoesGaragem.alterarGaragem();
                     System.out.println("Entre no quinto");
                     break;
                 case 6:
+                    funcoesGaragem.listarcarros();
                     System.out.println("Entre no sexto");
                     break;
                 case 7:
-                    System.out.println("Voltando");
+                    System.out.println();
                     break;
                 default:
                     System.out.println("Opção invalida!!");
             }
         } while (op != 7);{
             System.out.println("Voltando!!");
+            System.out.println();
+            option.nextLine();
         }
     }
 }
