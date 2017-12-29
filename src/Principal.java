@@ -20,6 +20,8 @@ public class Principal {
             switch (escolha) {
                 case 1:
                     System.out.println("Entre aqui");
+                    MenuGaragem menu = new MenuGaragem();
+                    menu.Menu();
                     break;
                 case 2:
                     System.out.println("Entre no segundo");
