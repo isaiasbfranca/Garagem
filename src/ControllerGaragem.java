@@ -8,7 +8,7 @@ public class ControllerGaragem {
     Scanner leitura = new Scanner(System.in);
     int i;
 
-    public void inserirGaragem(){
+    public void inserirGaragem() {
         novaGaragem = new Garagem();
         System.out.println("Nome: ");
         novaGaragem.setNome(leitura.nextLine());
@@ -24,24 +24,34 @@ public class ControllerGaragem {
         System.out.println("Pressione uma tecla para continuar!");
         leitura.nextLine();
     }
-    public void listarGaragem(){
-        if(garagemList.isEmpty()){
+
+    public void listarGaragem() {
+        if (garagemList.isEmpty()) {
             System.out.println("Não existe garagens cadastradas!!");
             leitura.nextLine();
-        }else {
-            for (i = 1; i < garagemList.size(); i++){
-                System.out.printf("Posição %d- %s\n", i, garagemList.get(i));
+        } else {
+            for (i = 0; i < garagemList.size(); i++) {
+                System.out.printf("ID: %d- %s\n", i + 1, garagemList.get(i));
             }
         }
 
     }
-    public void editarGaragem(){
+
+    public void editarGaragem() {
+        System.out.printf("\nInforme o ID do item a ser alterado :\n");
+        i = leitura.nextInt();
+        for (i = 0; i < garagemList.size(); i++){
+            if(i == )
+        }
 
     }
-    public void excluirGaragem(){
+
+    public void excluirGaragem() {
+        System.out.printf("\nInforme a posição a ser excluída:\n");
+        i = leitura.nextInt();
         try {
             // [ D ] remove o i-ésimo contato da agenda
-            garagemList.remove(i);
+            garagemList.remove(i - 1);
         } catch (IndexOutOfBoundsException e) {
             // exceção lançada para indicar que um índice (i)
             // está fora do intervalo válido (de 0 até agenda.size()-1)
@@ -50,10 +60,12 @@ public class ControllerGaragem {
         }
 
     }
-    public void alterarGaragem(){
+
+    public void buscarGaragem() {
 
     }
-    public void listarcarros(){
+
+    public void listarcarros() {
 
     }
 }
