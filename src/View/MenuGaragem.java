@@ -1,4 +1,9 @@
+package View;
+
+import Controller.ControllerGaragem;
+
 import java.util.Scanner;
+
 
 public class MenuGaragem {
     public void Menu() {
@@ -43,15 +48,12 @@ public class MenuGaragem {
                     System.out.println("Entre no sexto");
                     break;
                 case 7:
-                    System.out.println();
-                    break;
+                    return;
                 default:
                     System.out.println("Opção invalida!!");
             }
-        } while (op != 7);{
-            System.out.println("Voltando!!");
-            System.out.println();
-            option.nextLine();
-        }
+
+        }while (op != 8);
     }
+
 }

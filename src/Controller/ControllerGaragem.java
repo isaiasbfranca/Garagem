@@ -1,3 +1,7 @@
+package Controller;
+
+import Services.Garagem;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,7 +45,7 @@ public class ControllerGaragem {
         System.out.printf("\nInforme o ID do item a ser alterado :\n");
         i = leitura.nextInt();
         for (i = 0; i < garagemList.size(); i++){
-            if(i == )
+            //if(i ==  )
         }
 
     }

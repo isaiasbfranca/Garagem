@@ -1,9 +1,14 @@
+package View;
+
+import View.MenuGaragem;
+
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        Scanner option = new Scanner(System.in);
-        int escolha;
+      Scanner option = new Scanner((System.in));
+        MenuGaragem menu = new MenuGaragem();
+        int escolha = 0;
 
         do {
             System.out.println("######################");
@@ -17,12 +22,11 @@ public class Principal {
             System.out.println("Digite uma opção: ");
             escolha = Integer.parseInt(option.next());
 
+
             switch (escolha) {
                 case 1:
-                    System.out.println("Entre aqui");
-                    MenuGaragem menu = new MenuGaragem();
                     menu.Menu();
-                    break;
+                    continue;
                 case 2:
                     System.out.println("Entre no segundo");
                     break;
@@ -31,10 +35,11 @@ public class Principal {
                     break;
                 case 4:
                     System.out.println("Saindo do Programa");
+                    System.exit(4);
                     break;
                 default:
                     System.out.println("Opção invalida!!");
             }
-        } while (escolha != 4);
+        }while (escolha != 4);
     }
 }
