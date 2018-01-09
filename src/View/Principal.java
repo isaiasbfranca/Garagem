@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) {
       Scanner option = new Scanner((System.in));
-        MenuGaragem menu = new MenuGaragem();
+        MenuGaragem menu1 = new MenuGaragem();
+        MenuCliente menu2 = new MenuCliente();
         int escolha = 0;
 
         do {
@@ -25,9 +26,10 @@ public class Principal {
 
             switch (escolha) {
                 case 1:
-                    menu.Menu();
+                    menu1.Menu();
                     continue;
                 case 2:
+                    menu2.menu();
                     System.out.println("Entre no segundo");
                     break;
                 case 3:
