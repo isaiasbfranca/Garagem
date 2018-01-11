@@ -1,8 +1,11 @@
 package View;
 
 import Controller.ControllerGaragem;
+import javafx.scene.paint.Stop;
 
 import java.util.Scanner;
+
+import static java.lang.System.gc;
 
 
 public class MenuGaragem {

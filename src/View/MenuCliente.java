@@ -5,7 +5,7 @@ import Services.Cliente;
 
 import java.io.*;
 
-public class MenuCliente {
+public class MenuCliente{
     //Índice do último registro
     private int top = 0;
     //Número constante que indica o número máximo de registro do cadastro
@@ -40,11 +40,11 @@ public class MenuCliente {
 
             //Verifica a escolha do usuário
             switch (act){
-                case 1: add.addEntry(); break;
-                case 2: add.updateEntry(); break;
-                case 3: add.delEntry(); break;
-                case 4: add.viewEntries(); break;
-                case 0: System.exit(0);
+                case 1: add.addEntry(); continue;
+                case 2: add.viewEntries(); continue;
+                case 3: add.updateEntry(); continue;
+                case 4: add.delEntry(); continue;
+                case 0: return;
                 default: System.out.println (" Comando desconhecido ");
             }
 
