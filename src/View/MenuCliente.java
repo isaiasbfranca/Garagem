@@ -12,11 +12,12 @@ public class MenuCliente{
     private static final int MAXENTRIES = 100;
     //Array de registros do cadastro
     private Cliente[] list;
+    ControllerCliente add = new ControllerCliente();
 
     public void menu() {
         BufferedReader keyIn = new BufferedReader
                 (new InputStreamReader(System.in));
-        ControllerCliente add = new ControllerCliente();
+
         int act = 0;
         while (true) {
             //Mostra as opções
@@ -40,10 +41,10 @@ public class MenuCliente{
 
             //Verifica a escolha do usuário
             switch (act){
-                case 1: add.addEntry(); continue;
-                case 2: add.viewEntries(); continue;
-                case 3: add.updateEntry(); continue;
-                case 4: add.delEntry(); continue;
+                case 1: add.addEntry(); break;
+                case 2: add.viewEntries(); break;
+                case 3: add.updateEntry(); break;
+                case 4: add.delEntry(); break;
                 case 0: return;
                 default: System.out.println (" Comando desconhecido ");
             }

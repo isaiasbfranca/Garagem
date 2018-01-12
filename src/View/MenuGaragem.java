@@ -1,17 +1,16 @@
 package View;
 
 import Controller.ControllerGaragem;
-import javafx.scene.paint.Stop;
+
 
 import java.util.Scanner;
 
-import static java.lang.System.gc;
 
 
 public class MenuGaragem {
+    ControllerGaragem funcoesGaragem = new ControllerGaragem();
     public void Menu() {
         Scanner option = new Scanner(System.in);
-        ControllerGaragem funcoesGaragem = new ControllerGaragem();
         int op;
 
         do {
