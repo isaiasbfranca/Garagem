@@ -3,25 +3,27 @@ package Controller;
 import Services.Cliente;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class ControllerCliente {
     private int top = 0;
     //Número constante que indica o número máximo de registro do cadastro
-    private static final int MAXENTRIES = 100;
+
+    Cliente novoCliente = new Cliente();
+    List<Cliente> clienteList = new ArrayList<>();
     private Cliente[] list;
     private int i;
 
     public void addEntry(){
         BufferedReader keyIn = new BufferedReader (new InputStreamReader(System.in));
+        Scanner leitura = new Scanner(System.in);
         String nome = "";
         String endereco = "";
         String cep = "";
         String cpf = "";
         String telefone = "";
-        if (top == MAXENTRIES){
-            System.out.println ( " O cadastro está cheio ");
-            return;
-        }
         //Pede ao usuário a digitação dos dados
         try {
             System.out.print (" Nome : ");
@@ -54,6 +56,7 @@ public class ControllerCliente {
         String telefone = "";
         //Solicita a digitação dos dados
         try {
+            viewEntries();
             System.out.print (" Número do cadastro : ");
             index = Integer.parseInt(keyIn.readLine())-1;
             System.out.print (" Nome : ");
@@ -119,6 +122,6 @@ public class ControllerCliente {
 
     //Cria o registro de cadastro
     public ControllerCliente() {
-        list = new Cliente[MAXENTRIES];
+        list = new Cliente[top];
     }
 }

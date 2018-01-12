@@ -14,16 +14,17 @@ public class MenuGaragem {
         int op;
 
         do {
-            System.out.println("#########################");
-            System.out.println("######## GARAGEM ########");
-            System.out.println("##### 1 - CADASTRAR  ####");
-            System.out.println("##### 2 - LISTAR     ####");
-            System.out.println("##### 3 - EDITAR     ####");
-            System.out.println("##### 4 - EXCLUIR    ####");
-            System.out.println("##### 5 - BUSCAR     ####");
-            System.out.println("##### 6 - CARROS     ####");
-            System.out.println("##### 7 - VOLTAR     ####");
-            System.out.println("#########################");
+            System.out.println("###############################");
+            System.out.println("########### GARAGEM ###########");
+            System.out.println("#####    1 - CADASTRAR  #######");
+            System.out.println("#####    2 - LISTAR     #######");
+            System.out.println("#####    3 - EDITAR     #######");
+            System.out.println("#####    4 - EXCLUIR    #######");
+            System.out.println("#####    5 - BUSCAR     #######");
+            System.out.println("#####    6 - CARROS     #######");
+            System.out.println("#####    7 - VOLTAR     #######");
+            System.out.println("##### 8 - Sair do programa ####");
+            System.out.println("###############################");
 
             System.out.println("Digite uma opção: ");
             op = Integer.parseInt(option.next());
@@ -43,14 +44,30 @@ public class MenuGaragem {
                     break;
                 case 5:
                     funcoesGaragem.buscarGaragem();
-                    System.out.println("Entre no quinto");
                     break;
                 case 6:
                     funcoesGaragem.listarcarros();
-                    System.out.println("Entre no sexto");
                     break;
                 case 7:
+                    System.out.println("Deseja realmente voltar? (S/N)");
+                    String op2 = option.next();
+
+                    if( op2.equals('n') || op2.equals('N')){
+                        break;
+                    }else if (op2.equals('s') || op2.equals('S')){
+                        continue;
+                    }
                     return;
+                case 8:
+                    System.out.println("Deseja realmente Sair do Programa? (S/N)");
+                    String op3 = option.next();
+                    if( op3.equals('s') || op3.equals('S')){
+                        System.exit('s');
+                    }else{
+                        continue;
+                    }
+                    break;
+
                 default:
                     System.out.println("Opção invalida!!");
             }
