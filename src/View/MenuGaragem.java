@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class MenuGaragem {
     ControllerGaragem funcoesGaragem = new ControllerGaragem();
-    public void Menu() {
+    public void menu() {
         Scanner option = new Scanner(System.in);
         int op;
 
-        do {
+        while (true){
             System.out.println("###############################");
             System.out.println("########### GARAGEM ###########");
             System.out.println("#####    1 - CADASTRAR  #######");
@@ -49,30 +49,16 @@ public class MenuGaragem {
                     funcoesGaragem.listarcarros();
                     break;
                 case 7:
-                    System.out.println("Deseja realmente voltar? (S/N)");
-                    String op2 = option.next();
-
-                    if( op2.equals('n') || op2.equals('N')){
-                        break;
-                    }else if (op2.equals('s') || op2.equals('S')){
-                        continue;
-                    }
+                    System.out.println("\n Voltando \n");
                     return;
                 case 8:
-                    System.out.println("Deseja realmente Sair do Programa? (S/N)");
-                    String op3 = option.next();
-                    if( op3.equals('s') || op3.equals('S')){
-                        System.exit('s');
-                    }else{
-                        continue;
-                    }
-                    break;
-
+                    System.out.println("\n Fechando programa! \n");
+                    System.exit(8);
                 default:
-                    System.out.println("Opção invalida!!");
+                    System.out.println("\n Opção invalida!! \n");
             }
 
-        }while (op != 8);
+        }
     }
 
 }

@@ -1,26 +1,17 @@
 package View;
 
-import Controller.ControllerCliente;
-import Services.Cliente;
+import java.util.Scanner;
 
-import java.io.*;
-
-public class MenuCliente {
-    //Índice do último registro
-    private int top = 0;
-    //Array de registros do cadastro
-    private Cliente[] list;
-    ControllerCliente add = new ControllerCliente();
+public class MenuVeiculo {
 
     public void menu() {
-        BufferedReader keyIn = new BufferedReader
-                (new InputStreamReader(System.in));
+        Scanner leitura = new Scanner(System.in);
+        int op;
 
-        int act = 0;
+
         while (true) {
-            //Mostra as opções
             System.out.println("###############################");
-            System.out.println("########### CLIENTE ###########");
+            System.out.println("########### VEICULO ###########");
             System.out.println("#####    1 - CADASTRAR  #######");
             System.out.println("#####    2 - LISTAR     #######");
             System.out.println("#####    3 - EDITAR     #######");
@@ -31,39 +22,27 @@ public class MenuCliente {
             System.out.println("###############################");
             System.out.println("Escolha uma opção: \n");
 
-            try {
-                //Obter a escolha
-                act = Integer.parseInt(keyIn.readLine());
-            } catch (Exception e) {
-                System.out.println(" Erro ");
-            }
+            op = Integer.parseInt(leitura.nextLine());
 
-            //Verifica a escolha do usuário
-            switch (act) {
+            switch (op) {
                 case 1:
-                    add.addEntry();
                     break;
                 case 2:
-                    add.viewEntries();
                     break;
                 case 3:
-                    add.updateEntry();
                     break;
                 case 4:
-                    add.delEntry();
                     break;
                 case 5:
                     break;
                 case 6:
+                    System.out.println("\n Voltando \n");
                     return;
+                case 7:
+                    System.exit(7);
                 default:
-                    System.out.println(" Comando desconhecido ");
+                    System.out.println("\n Opção invalida \n");
             }
-
-
         }
-
     }
-
 }
-

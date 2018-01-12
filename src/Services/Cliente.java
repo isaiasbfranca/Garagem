@@ -15,12 +15,12 @@ public class Cliente {
         this.setCep("");
     }
 
-    public Cliente(String nome, String endereco, String telefone, String cpf, String cep) {
+    public Cliente(String nome, String endereco, String cep, String cpf, String telefone) {
         this.setNome(nome);
         this.setEndereco(endereco);
-        this.setTelefone(telefone);
-        this.setCpf(cpf);
         this.setCep(cep);
+        this.setCpf(cpf);
+        this.setTelefone(telefone);
 
     }
 

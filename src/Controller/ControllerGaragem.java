@@ -35,7 +35,11 @@ public class ControllerGaragem {
             leitura.nextLine();
         } else {
             for (i = 0; i < garagemList.size(); i++) {
-                System.out.printf("ID: %d- %s\n", i + 1, garagemList.get(i));
+                System.out.println("ID: " + (i + 1));
+                System.out.println("NOME: " + garagemList.get(i).getNome());
+                System.out.println("CNPJ: " + garagemList.get(i).getCnpj());
+                System.out.println("ENDEREÇO: " + garagemList.get(i).getEndereco());
+                System.out.println("TELEFONE: " + garagemList.get(i).getTelefone());
             }
         }
 

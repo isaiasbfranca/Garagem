@@ -11,8 +11,9 @@ public class ControllerCliente {
     private int top = 0;
     //Número constante que indica o número máximo de registro do cadastro
 
-    Cliente novoCliente = new Cliente();
-    List<Cliente> clienteList = new ArrayList<>();
+   // Cliente novoCliente = new Cliente();
+    //List<Cliente> clienteList = new ArrayList<>();
+   private static final int MAXENTRIES = 100;
     private Cliente[] list;
     private int i;
 
@@ -122,6 +123,6 @@ public class ControllerCliente {
 
     //Cria o registro de cadastro
     public ControllerCliente() {
-        list = new Cliente[top];
+        list = new Cliente[MAXENTRIES];
     }
 }

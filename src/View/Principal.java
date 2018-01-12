@@ -10,7 +10,7 @@ public class Principal {
         System.out.println("######################");
         System.out.println("######## MENU ########");
         System.out.println("#### 1 - GARAGEM  ####");
-        System.out.println("#### 2 - CARRO    ####");
+        System.out.println("#### 2 - VEICULO  ####");
         System.out.println("#### 3 - CLIENTE  ####");
         System.out.println("#### 4 - SAIR     ####");
         System.out.println("######################");
@@ -22,31 +22,33 @@ public class Principal {
     public static void main(String[] args) {
         Scanner option = new Scanner((System.in));
         MenuGaragem menu1 = new MenuGaragem();
-        MenuCliente menu2 = new MenuCliente();;
+        //MenuVeiculo menu2 = new MenuVeiculo();
+        MenuCliente menu3 = new MenuCliente();;
         int escolha = 0;
 
-        do {
+        while (true){
             menu();
             escolha = Integer.parseInt(option.next());
 
 
             switch (escolha) {
                 case 1:
-                    menu1.Menu();
+                    menu1.menu();
                     break;
                 case 2:
-                    menu2.menu();
+                    //menu2.menu();
                     break;
                 case 3:
-                    continue;
+                    menu3.menu();
+                    break;
                 case 4:
                     System.out.println("Saindo do Programa");
                     System.exit(4);
-                    continue;
+                    break;
                 default:
                     System.out.println("Opção invalida!!");
             }
-        } while (escolha != 4);
+        }
 
 
 
