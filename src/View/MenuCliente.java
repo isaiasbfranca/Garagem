@@ -1,20 +1,15 @@
 package View;
 
 import Controller.ControllerCliente;
-import Services.Cliente;
 
-import java.io.*;
+import java.util.Scanner;
 
 public class MenuCliente {
-    //Índice do último registro
-    private int top = 0;
-    //Array de registros do cadastro
-    private Cliente[] list;
+
     ControllerCliente add = new ControllerCliente();
 
     public void menu() {
-        BufferedReader keyIn = new BufferedReader
-                (new InputStreamReader(System.in));
+        Scanner opcao = new Scanner(System.in);
 
         int act = 0;
         while (true) {
@@ -33,7 +28,7 @@ public class MenuCliente {
 
             try {
                 //Obter a escolha
-                act = Integer.parseInt(keyIn.readLine());
+                act = Integer.parseInt(opcao.nextLine());
             } catch (Exception e) {
                 System.out.println(" Erro ");
             }
@@ -53,9 +48,12 @@ public class MenuCliente {
                     add.delEntry();
                     break;
                 case 5:
+                    add.search();
                     break;
                 case 6:
                     return;
+                case 7:
+                    System.exit(7);
                 default:
                     System.out.println(" Comando desconhecido ");
             }

@@ -2,6 +2,7 @@ package View;
 
 import View.MenuGaragem;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Principal {
@@ -19,7 +20,7 @@ public class Principal {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner option = new Scanner((System.in));
         MenuGaragem menu1 = new MenuGaragem();
         //MenuVeiculo menu2 = new MenuVeiculo();

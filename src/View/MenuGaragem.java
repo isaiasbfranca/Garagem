@@ -3,13 +3,14 @@ package View;
 import Controller.ControllerGaragem;
 
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
 
 public class MenuGaragem {
     ControllerGaragem funcoesGaragem = new ControllerGaragem();
-    public void menu() {
+    public void menu() throws IOException {
         Scanner option = new Scanner(System.in);
         int op;
 

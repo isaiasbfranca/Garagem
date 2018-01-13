@@ -3,24 +3,25 @@ package Services;
 public class Cliente {
     private String nome;
     private String endereco;
+    private String cep;
     private String telefone;
     private String cpf;
-    private String cep;
 
     public Cliente() {
         this.setNome("");
-        this.setCpf("");
-        this.setTelefone("");
         this.setEndereco("");
         this.setCep("");
+        this.setTelefone("");
+        this.setCpf("");
+
     }
 
-    public Cliente(String nome, String endereco, String cep, String cpf, String telefone) {
+    public Cliente(String nome, String endereco, String cep, String telefone, String cpf) {
         this.setNome(nome);
         this.setEndereco(endereco);
         this.setCep(cep);
-        this.setCpf(cpf);
         this.setTelefone(telefone);
+        this.setCpf(cpf);
 
     }
 

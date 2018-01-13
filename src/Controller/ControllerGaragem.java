@@ -2,6 +2,9 @@ package Controller;
 
 import Services.Garagem;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -35,7 +38,7 @@ public class ControllerGaragem {
             leitura.nextLine();
         } else {
             for (i = 0; i < garagemList.size(); i++) {
-                System.out.println("ID: " + (i + 1));
+                System.out.println((i + 1));
                 System.out.println("NOME: " + garagemList.get(i).getNome());
                 System.out.println("CNPJ: " + garagemList.get(i).getCnpj());
                 System.out.println("ENDEREÇO: " + garagemList.get(i).getEndereco());
@@ -46,11 +49,25 @@ public class ControllerGaragem {
     }
 
     public void editarGaragem() {
-        System.out.printf("\nInforme o ID do item a ser alterado :\n");
-        i = leitura.nextInt();
-        for (i = 0; i < garagemList.size(); i++){
-            //if(i ==  )
+
+        try {
+            listarGaragem();
+            System.out.printf("\nInforme o ID do item a ser alterado :\n");
+            i = Integer.parseInt(leitura.nextLine()) - 1;
+            System.out.println("Nome: ");
+            novaGaragem.setNome(leitura.nextLine());
+            System.out.println("Endereço: ");
+            novaGaragem.setEndereco(leitura.nextLine());
+            System.out.println("Telefone: ");
+            novaGaragem.setTelefone(leitura.nextLine());
+            System.out.println("CNPJ: ");
+            novaGaragem.setCnpj(leitura.nextLine());
+        }catch (Exception e){
+            System.out.println(e);
+            System.exit(0);
         }
+
+        garagemList.set(i,novaGaragem);
 
     }
 
