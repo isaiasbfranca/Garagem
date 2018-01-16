@@ -2,9 +2,6 @@ package Controller;
 
 import Services.Garagem;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,7 +25,7 @@ public class ControllerGaragem {
 
         garagemList.add(novaGaragem);
 
-        System.out.println("Pressione uma tecla para continuar!");
+        System.out.println("\n");
         leitura.nextLine();
     }
 
@@ -39,7 +36,7 @@ public class ControllerGaragem {
         } else {
             for (i = 0; i < garagemList.size(); i++) {
                 System.out.println((i + 1));
-                System.out.println("NOME: " + garagemList.get(i).getNome());
+                System.out.println("NOME: " + garagemList.get(i).getNome().toUpperCase());
                 System.out.println("CNPJ: " + garagemList.get(i).getCnpj());
                 System.out.println("ENDEREÇO: " + garagemList.get(i).getEndereco());
                 System.out.println("TELEFONE: " + garagemList.get(i).getTelefone());
@@ -72,6 +69,11 @@ public class ControllerGaragem {
     }
 
     public void excluirGaragem() {
+        if (garagemList.isEmpty()) {
+            System.out.println(" \nO cadastro está vazio\n ");
+            return;
+        }
+
         System.out.printf("\nInforme a posição a ser excluída:\n");
         i = leitura.nextInt();
         try {
@@ -80,14 +82,28 @@ public class ControllerGaragem {
         } catch (IndexOutOfBoundsException e) {
             // exceção lançada para indicar que um índice (i)
             // está fora do intervalo válido (de 0 até agenda.size()-1)
-            System.out.printf("\nErro: posição inválida (%s).",
+            System.out.printf("\nErro: posição inválida (%s).\n",
                     e.getMessage());
         }
 
     }
 
     public void buscarGaragem() {
+        String busca;
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite o Nome da garagem ou CNPJ para pesquisar: ");
+        busca = entrada.nextLine();
+        for(i = 0; i < garagemList.size(); i++){
+            if(garagemList.get(i).getNome().contains(busca) || garagemList.get(i).getCnpj().contains(busca)){
+                System.out.println("Resultado: ");
+                System.out.println((i + 1));
+                System.out.println("NOME: " + garagemList.get(i).getNome());
+                System.out.println("CNPJ: " + garagemList.get(i).getCnpj());
+                System.out.println("ENDEREÇO: " + garagemList.get(i).getEndereco());
+                System.out.println("TELEFONE: " + garagemList.get(i).getTelefone());
+            }
 
+        }
     }
 
     public void listarcarros() {

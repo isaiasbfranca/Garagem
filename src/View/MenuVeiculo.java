@@ -1,8 +1,11 @@
 package View;
 
+import Controller.ControllerVeiculo;
+
 import java.util.Scanner;
 
 public class MenuVeiculo {
+    ControllerVeiculo funcoesVeiculo = new ControllerVeiculo();
 
     public void menu() {
         Scanner leitura = new Scanner(System.in);
@@ -26,14 +29,19 @@ public class MenuVeiculo {
 
             switch (op) {
                 case 1:
+                    funcoesVeiculo.insereVeiculo();
                     break;
                 case 2:
+                    funcoesVeiculo.listaVeiculo();
                     break;
                 case 3:
+                    funcoesVeiculo.editaVeiculo();
                     break;
                 case 4:
+                    funcoesVeiculo.excluiVeiculo();
                     break;
                 case 5:
+                    funcoesVeiculo.buscaVeiculo();
                     break;
                 case 6:
                     System.out.println("\n Voltando \n");
