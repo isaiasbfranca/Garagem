@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e7f1498-e8bf-40b4-a6d8-44f900a3a96d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/Controller/ControllerCliente.class" afterPath="$PROJECT_DIR$/out/production/Garagem/Controller/ControllerCliente.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/Controller/ControllerGaragem.class" afterPath="$PROJECT_DIR$/out/production/Garagem/Controller/ControllerGaragem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/Controller/ControllerVeiculo.class" afterPath="$PROJECT_DIR$/out/production/Garagem/Controller/ControllerVeiculo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/Services/Cliente.class" afterPath="$PROJECT_DIR$/out/production/Garagem/Services/Cliente.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/Services/Garagem.class" afterPath="$PROJECT_DIR$/out/production/Garagem/Services/Garagem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/Services/Veiculo.class" afterPath="$PROJECT_DIR$/out/production/Garagem/Services/Veiculo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/View/MenuCliente.class" afterPath="$PROJECT_DIR$/out/production/Garagem/View/MenuCliente.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/View/MenuGaragem.class" afterPath="$PROJECT_DIR$/out/production/Garagem/View/MenuGaragem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/View/MenuVeiculo.class" afterPath="$PROJECT_DIR$/out/production/Garagem/View/MenuVeiculo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Garagem/View/Principal.class" afterPath="$PROJECT_DIR$/out/production/Garagem/View/Principal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ControllerGaragem.java" afterPath="$PROJECT_DIR$/src/Controller/ControllerGaragem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/ControllerVeiculo.java" afterPath="$PROJECT_DIR$/src/Controller/ControllerVeiculo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Services/Veiculo.java" afterPath="$PROJECT_DIR$/src/Services/Veiculo.java" />
-    </list>
+    <list default="true" id="4e7f1498-e8bf-40b4-a6d8-44f900a3a96d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -720,12 +704,12 @@
       <workItem from="1515857488151" duration="8658000" />
       <workItem from="1516036236823" duration="10826000" />
       <workItem from="1516071114682" duration="2347000" />
-      <workItem from="1517478365828" duration="11060000" />
+      <workItem from="1517478365828" duration="11388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75855000" />
+    <option name="totallyTimeSpent" value="76183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
