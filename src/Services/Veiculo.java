@@ -6,6 +6,15 @@ public class Veiculo {
     private String ano;
     private int portas;
     private String opciononais;
+    private String garagem;
+
+    public String getGaragem() {
+        return garagem;
+    }
+
+    public void setGaragem(String garagem) {
+        this.garagem = garagem;
+    }
 
     public String getNome() {
         return nome;
@@ -49,12 +58,13 @@ public class Veiculo {
 
     @Override
     public String toString() {
-        return "Carro{" +
+        return "Veiculo{" +
                 "nome='" + nome + '\'' +
                 ", marca='" + marca + '\'' +
                 ", ano='" + ano + '\'' +
                 ", portas=" + portas +
                 ", opciononais='" + opciononais + '\'' +
+                ", garagem='" + garagem + '\'' +
                 '}';
     }
 }

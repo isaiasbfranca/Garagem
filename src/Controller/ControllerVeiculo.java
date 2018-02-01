@@ -1,19 +1,32 @@
 package Controller;
 
+import Services.Garagem;
 import Services.Veiculo;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static Controller.ControllerGaragem.garagemList;
+
 public class ControllerVeiculo {
     Veiculo veiculo;
-    List<Veiculo> veiculoList = new ArrayList<>();
+    static List<Veiculo> veiculoList = new ArrayList<>();
     Scanner leitura = new Scanner(System.in);
     int i;
 
     public void insereVeiculo() {
         veiculo = new Veiculo();
+        System.out.println("Garagem: ");
+        veiculo.setGaragem(leitura.nextLine());
+        for (i = 0; i < garagemList.size(); i++) {
+            if (garagemList.get(i).getNome().equals(veiculoList.get(i).getGaragem())){
+                continue;
+            } else {
+                System.out.println("Garagem não existe\n");
+                return;
+            }
+        }
         System.out.println(" Nome: ");
         veiculo.setNome(leitura.nextLine());
         System.out.println(" Marca: ");
@@ -93,10 +106,10 @@ public class ControllerVeiculo {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digite o nome ou marca do veiculo para pesquisar: ");
         busca = entrada.nextLine();
-        for(i = 0; i <veiculoList.size();i++){
-            if(veiculoList.get(i).getNome().contains(busca) || veiculoList.get(i).getMarca().contains(busca)){
+        for (i = 0; i < veiculoList.size(); i++) {
+            if (veiculoList.get(i).getNome().contains(busca) || veiculoList.get(i).getMarca().contains(busca)) {
                 System.out.println("Resultado: ");
-                System.out.println(i+1);
+                System.out.println(i + 1);
                 System.out.println(" Nome: " + veiculoList.get(i).getNome().toUpperCase());
                 System.out.println(" Marca: " + veiculoList.get(i).getMarca());
                 System.out.println(" Ano: " + veiculoList.get(i).getAno());
