@@ -4,10 +4,10 @@ import Controller.ControllerVeiculo;
 
 import java.util.Scanner;
 
-public class MenuVeiculo {
-    ControllerVeiculo funcoesVeiculo = new ControllerVeiculo();
+class MenuVeiculo {
+    private ControllerVeiculo funcoesVeiculo = new ControllerVeiculo();
 
-    public void menu() {
+    void menu() {
         Scanner leitura = new Scanner(System.in);
         int op;
 

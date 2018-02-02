@@ -7,14 +7,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
+class MenuGaragem {
+    private ControllerGaragem funcoesGaragem = new ControllerGaragem();
 
-public class MenuGaragem {
-    ControllerGaragem funcoesGaragem = new ControllerGaragem();
-    public void menu() throws IOException {
+    void menu() throws IOException {
         Scanner option = new Scanner(System.in);
         int op;
 
-        while (true){
+        while (true) {
             System.out.println("###############################");
             System.out.println("########### GARAGEM ###########");
             System.out.println("#####    1 - CADASTRAR  #######");

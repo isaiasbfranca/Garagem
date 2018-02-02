@@ -1,6 +1,5 @@
 package Controller;
 
-import Services.Garagem;
 import Services.Veiculo;
 
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ import java.util.Scanner;
 import static Controller.ControllerGaragem.garagemList;
 
 public class ControllerVeiculo {
-    Veiculo veiculo;
+    static Veiculo veiculo;
     static List<Veiculo> veiculoList = new ArrayList<>();
     Scanner leitura = new Scanner(System.in);
     int i;
@@ -19,13 +18,19 @@ public class ControllerVeiculo {
         veiculo = new Veiculo();
         System.out.println("Garagem: ");
         veiculo.setGaragem(leitura.nextLine());
-        for (i = 0; i < garagemList.size(); i++) {
-            if (garagemList.get(i).getNome().equals(veiculoList.get(i).getGaragem())){
-                continue;
-            } else {
-                System.out.println("Garagem não existe\n");
-                return;
+        if (garagemList.isEmpty()) {
+            System.out.println("\n Nenhuma garagem cadastrada \n");
+            return;
+        } else {
+            for (i = 0; i < garagemList.size(); i++) {
+                if (garagemList.get(i).getNome().contains(veiculo.getGaragem())) {
+                    break;
+                }
             }
+        }
+        if(!garagemList.get(i).getNome().contains(veiculo.getGaragem())){
+            System.out.println("\n Garagem inexistente\n");
+            return;
         }
         System.out.println(" Nome: ");
         veiculo.setNome(leitura.nextLine());
