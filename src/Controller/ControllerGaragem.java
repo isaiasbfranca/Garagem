@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static Controller.ControllerVeiculo.veiculo;
+
+
 import static Controller.ControllerVeiculo.veiculoList;
 
 public class ControllerGaragem {
@@ -97,10 +98,10 @@ public class ControllerGaragem {
         System.out.println("Digite o Nome da garagem ou CNPJ para pesquisar: ");
         busca = entrada.nextLine();
         for (i = 0; i < garagemList.size(); i++) {
-            if (garagemList.get(i).getNome().contains(busca) || garagemList.get(i).getCnpj().contains(busca)) {
+            if (garagemList.get(i).getNome().toUpperCase().contains(busca.toUpperCase()) || garagemList.get(i).getCnpj().contains(busca)) {
                 System.out.println("Resultado: ");
                 System.out.println((i + 1));
-                System.out.println("NOME: " + garagemList.get(i).getNome());
+                System.out.println("NOME: " + garagemList.get(i).getNome().toUpperCase());
                 System.out.println("CNPJ: " + garagemList.get(i).getCnpj());
                 System.out.println("ENDEREÇO: " + garagemList.get(i).getEndereco());
                 System.out.println("TELEFONE: " + garagemList.get(i).getTelefone());
@@ -118,35 +119,22 @@ public class ControllerGaragem {
         listarGaragem();
         System.out.println("\n Listar carros de qual garagem? ");
         cadastrogaragem = leitura.nextLine();
-        if (novaGaragem.getNome().equals(cadastrogaragem) && veiculoList.get(i).getGaragem().equals(cadastrogaragem)) {
+        for (i = 0; i < garagemList.size(); i++) {
             if (veiculoList.isEmpty()) {
                 System.out.println("\n Não ha carros cadastrados\n");
                 return;
-            } else {
-                for (i = 0; i < garagemList.size(); i++) {
-                    for (int j = 0; j < veiculoList.size(); j++) {
-                        System.out.println((i + 1) + "Garagem " + garagemList.get(i).getNome());
-                        System.out.println(veiculoList.toString());
+            }
+            for (int j = 0; j < veiculoList.size(); j++) {
+                if (garagemList.get(i).getNome().equalsIgnoreCase(cadastrogaragem) && veiculoList.get(j).getGaragem().equalsIgnoreCase(cadastrogaragem)) {
+                    if (veiculoList.isEmpty()) {
+                        System.out.println("\n Não ha carros cadastrados\n");
+                        return;
+                    } else {
+                        System.out.println("Garagem " + garagemList.get(i).getNome());
+                        System.out.println(veiculoList.get(j).getNome());
                     }
                 }
             }
         }
-//        for (i = 0; i < garagemList.size(); i++) {
-//            if (veiculoList.isEmpty()) {
-//                System.out.println("\n Não ha carros cadastrados\n");
-//                break;
-//            }
-//            if (garagemList.get(i).getNome().contains(cadastrogaragem) && veiculoList.get(i).getGaragem().contains(cadastrogaragem)) {
-//                for (i = 0; i < garagemList.size(); i++) {
-//                    for (int j = 0; j < veiculoList.size(); i++) {
-//                        System.out.println(veiculoList.get(i).getNome());
-//                    }
-//                }
-//            }
-//        }
-//        if (!garagemList.get(i).getNome().contains(cadastrogaragem)) {
-//            System.out.println("ERRO!!");
-//            System.out.println("DIGITE O NOME CORRETAMENTE DA GARAGEM!!");
-//        }
     }
 }

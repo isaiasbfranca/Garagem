@@ -37,19 +37,19 @@ public class MenuCliente {
             //Verifica a escolha do usuário
             switch (act) {
                 case 1:
-                    add.addEntry();
+                    add.insereCliente();
                     break;
                 case 2:
-                    add.viewEntries();
+                    add.listarCliente();
                     break;
                 case 3:
-                    add.updateEntry();
+                    add.editaCliente();
                     break;
                 case 4:
-                    add.delEntry();
+                    add.excluiCliente();
                     break;
                 case 5:
-                    add.search();
+                    add.buscaCliente();
                     break;
                 case 6:
                     return;

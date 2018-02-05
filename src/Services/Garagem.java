@@ -6,19 +6,6 @@ public class Garagem {
     private String telefone;
     private String cnpj;
 
-    public Garagem() {
-        this.setNome("");
-        this.setEndereco("");
-        this.setTelefone("");
-        this.setCnpj("");
-    }
-
-    public Garagem(String nome, String endereco, String telefone, String cnpj) {
-        this.setNome(nome);
-        this.setEndereco(endereco);
-        this.setTelefone(telefone);
-        this.setCnpj(cnpj);
-    }
 
     public String getNome() {
         return nome;
