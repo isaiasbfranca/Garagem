@@ -16,17 +16,9 @@ public class Cliente {
 
     }
 
-    public Cliente(String nome, String endereco, String cep, String telefone, String cpf) {
-        this.setNome(nome);
-        this.setEndereco(endereco);
-        this.setCep(cep);
-        this.setTelefone(telefone);
-        this.setCpf(cpf);
-
-    }
 
     public String getNome() {
-        return nome;
+        return nome.toUpperCase();
     }
 
     public void setNome(String nome) {

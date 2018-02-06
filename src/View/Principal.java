@@ -1,14 +1,11 @@
 package View;
 
-import View.MenuGaragem;
-
-import java.awt.*;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Principal {
 
-    public static void menu(){
+    private static void menu(){
         System.out.println("######################");
         System.out.println("######## MENU ########");
         System.out.println("#### 1 - GARAGEM  ####");
@@ -25,8 +22,8 @@ public class Principal {
         Scanner option = new Scanner((System.in));
         MenuGaragem menu1 = new MenuGaragem();
         MenuVeiculo menu2 = new MenuVeiculo();
-        MenuCliente menu3 = new MenuCliente();;
-        int escolha = 0;
+        MenuCliente menu3 = new MenuCliente();
+        int escolha;
 
         while (true){
             menu();

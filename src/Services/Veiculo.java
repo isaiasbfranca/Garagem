@@ -8,8 +8,16 @@ public class Veiculo {
     private String opciononais;
     private String garagem;
 
+    public Veiculo() {
+        this.setNome("");
+        this.setMarca("");
+        this.setAno("");
+        this.setPortas(0);
+        this.setOpciononais("");
+    }
+
     public String getGaragem() {
-        return garagem;
+        return garagem.toUpperCase();
     }
 
     public void setGaragem(String garagem) {
@@ -17,7 +25,7 @@ public class Veiculo {
     }
 
     public String getNome() {
-        return nome;
+        return nome.toUpperCase();
     }
 
     public void setNome(String nome) {
@@ -25,7 +33,7 @@ public class Veiculo {
     }
 
     public String getMarca() {
-        return marca;
+        return marca.toUpperCase();
     }
 
     public void setMarca(String marca) {

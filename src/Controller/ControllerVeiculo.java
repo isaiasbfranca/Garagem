@@ -9,14 +9,14 @@ import java.util.Scanner;
 import static Controller.ControllerGaragem.garagemList;
 
 public class ControllerVeiculo {
-    static Veiculo veiculo;
+    private static Veiculo veiculo;
     static List<Veiculo> veiculoList = new ArrayList<>();
-    Scanner leitura = new Scanner(System.in);
-    int i;
+    private Scanner leitura = new Scanner(System.in);
+    private int i;
 
     public void insereVeiculo() {
         veiculo = new Veiculo();
-        System.out.println("Garagem: ");
+        System.out.println(" Garagem : ");
         veiculo.setGaragem(leitura.nextLine());
         if (garagemList.isEmpty()) {
             System.out.println("\n Nenhuma garagem cadastrada \n");
@@ -24,43 +24,39 @@ public class ControllerVeiculo {
         } else {
             for (i = 0; i < garagemList.size(); i++) {
                 if (garagemList.get(i).getNome().contains(veiculo.getGaragem())) {
-                    break;
+                    continue;
                 }
+//                if (!garagemList.get(i).getNome().contains(veiculo.getGaragem())) {
+//                    System.out.println("\n Garagem inexistente\n");
+//                    return;
+//                }
             }
         }
-        if(!garagemList.get(i).getNome().contains(veiculo.getGaragem())){
-            System.out.println("\n Garagem inexistente\n");
-            return;
-        }
-        System.out.println(" Nome: ");
+
+        System.out.println(" Nome : ");
         veiculo.setNome(leitura.nextLine());
-        System.out.println(" Marca: ");
+        System.out.println(" Marca : ");
         veiculo.setMarca(leitura.nextLine());
-        System.out.println(" Ano: ");
+        System.out.println(" Ano : ");
         veiculo.setAno(leitura.nextLine());
-        System.out.println(" Opcionais: ");
+        System.out.println(" Opcionais : ");
         veiculo.setOpciononais(leitura.nextLine());
-        System.out.println(" Portas");
+        System.out.println(" Portas :");
         veiculo.setPortas(leitura.nextInt());
 
         veiculoList.add(veiculo);
-
-        System.out.println("\n");
-        leitura.nextLine();
-
     }
 
     public void listaVeiculo() {
         if (veiculoList.isEmpty()) {
             System.out.println("\nNão existe veiculos cadastrados!\n");
-            leitura.nextLine();
         } else {
             for (i = 0; i < veiculoList.size(); i++) {
-                System.out.println((i + 1) + "\n Nome: " + veiculoList.get(i).getNome().toUpperCase());
-                System.out.println(" Marca: " + veiculoList.get(i).getMarca());
-                System.out.println(" Ano: " + veiculoList.get(i).getAno());
-                System.out.println(" Portas: " + veiculoList.get(i).getPortas());
-                System.out.println(" Opcionais: " + veiculoList.get(i).getOpciononais());
+                System.out.println((i + 1) + "\n Nome : " + veiculoList.get(i).getNome().toUpperCase());
+                System.out.println(" Marca : " + veiculoList.get(i).getMarca());
+                System.out.println(" Ano : " + veiculoList.get(i).getAno());
+                System.out.println(" Portas : " + veiculoList.get(i).getPortas());
+                System.out.println(" Opcionais : " + veiculoList.get(i).getOpciononais());
             }
         }
 
@@ -71,16 +67,16 @@ public class ControllerVeiculo {
             listaVeiculo();
             System.out.println("Digite o ID do veiculo que deseja alterar? ");
             i = Integer.parseInt(leitura.nextLine()) - 1;
-            System.out.println(" Nome: ");
+            System.out.println(" Nome : ");
             veiculo.setNome(leitura.nextLine());
-            System.out.println(" Marca: ");
+            System.out.println(" Marca : ");
             veiculo.setMarca(leitura.nextLine());
-            System.out.println(" Ano: ");
+            System.out.println(" Ano : ");
             veiculo.setAno(leitura.nextLine());
-            System.out.println(" Portas");
-            veiculo.setPortas(leitura.nextInt());
-            System.out.println(" Opcionais: ");
+            System.out.println(" Opcionais : ");
             veiculo.setOpciononais(leitura.nextLine());
+            System.out.println(" Portas :");
+            veiculo.setPortas(leitura.nextInt());
         } catch (Exception e) {
             System.out.println(e);
             System.exit(0);
@@ -114,8 +110,7 @@ public class ControllerVeiculo {
         for (i = 0; i < veiculoList.size(); i++) {
             if (veiculoList.get(i).getNome().contains(busca) || veiculoList.get(i).getMarca().contains(busca)) {
                 System.out.println("Resultado: ");
-                System.out.println(i + 1);
-                System.out.println(" Nome: " + veiculoList.get(i).getNome().toUpperCase());
+                System.out.println((i + 1) + "\n Nome: " + veiculoList.get(i).getNome().toUpperCase());
                 System.out.println(" Marca: " + veiculoList.get(i).getMarca());
                 System.out.println(" Ano: " + veiculoList.get(i).getAno());
                 System.out.println(" Portas: " + veiculoList.get(i).getPortas());

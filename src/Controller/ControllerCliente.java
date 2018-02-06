@@ -8,13 +8,15 @@ import java.util.Scanner;
 
 
 public class ControllerCliente {
-    Cliente novoCliente;
-    List<Cliente> clienteList = new ArrayList<>();
-    Scanner leitura = new Scanner(System.in);
+    private Cliente novoCliente;
+    private List<Cliente> clienteList = new ArrayList<>();
+    private Scanner leitura = new Scanner(System.in);
     private int i;
 
     public void insereCliente() {
+        //Cria um novo cliente
         novoCliente = new Cliente();
+        //Solicita a digitação dos dados
         try {
             System.out.print(" Nome : ");
             novoCliente.setNome(leitura.nextLine());
@@ -30,6 +32,7 @@ public class ControllerCliente {
             System.out.println(e);
             System.exit(0);
         }
+        //Adiciona informações do cliente
         clienteList.add(novoCliente);
     }
 
@@ -73,12 +76,11 @@ public class ControllerCliente {
             listarCliente();
             System.out.println("\n Solicte o registro a ser deletado : ");
             i = Integer.parseInt(leitura.nextLine()) - 1;
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         //Verifica se o índice está dentro do limite
         if (i < 0 || i >= clienteList.size()) {
             System.out.println(" Índice fora dos limites ");
-            return;
         } else {
             clienteList.remove(i);
         }
@@ -86,12 +88,16 @@ public class ControllerCliente {
 
     //Mètodo que imprime todos os registros do cadastro
     public void listarCliente() {
-        for (int i = 0; i < clienteList.size(); i++) {
-            System.out.println((i + 1) + "\n Nome: " + clienteList.get(i).getNome());
-            System.out.println(" Endereço : " + clienteList.get(i).getEndereco());
-            System.out.println(" CEP : " + clienteList.get(i).getCep());
-            System.out.println(" CPF : " + clienteList.get(i).getCpf());
-            System.out.println(" Telefone : " + clienteList.get(i).getTelefone() + "\n");
+        if(clienteList.isEmpty()){
+            System.out.println("\nNão existe clientes cadastrados\n");
+        }else {
+            for (int i = 0; i < clienteList.size(); i++) {
+                System.out.println((i + 1) + "\n Nome: " + clienteList.get(i).getNome());
+                System.out.println(" Endereço : " + clienteList.get(i).getEndereco());
+                System.out.println(" CEP : " + clienteList.get(i).getCep());
+                System.out.println(" CPF : " + clienteList.get(i).getCpf());
+                System.out.println(" Telefone : " + clienteList.get(i).getTelefone() + "\n");
+            }
         }
     }
 
@@ -105,7 +111,7 @@ public class ControllerCliente {
         System.out.println("Digite o CPF ou Nome do cliente para pesquisar: ");
         busca = entrada.next();
         for (i = 0; i < clienteList.size(); i++) {
-            if (clienteList.get(i).getNome().contains(busca) || clienteList.get(i).getCpf().contains(busca)) {
+            if (clienteList.get(i).getNome().toLowerCase().contains(busca.toLowerCase()) || clienteList.get(i).getCpf().contains(busca)) {
                 System.out.println("Resultado: ");
                 System.out.println((i + 1) + "\n Nome: " + clienteList.get(i).getNome());
                 System.out.println(" Endereço : " + clienteList.get(i).getEndereco());

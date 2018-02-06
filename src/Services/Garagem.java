@@ -6,9 +6,15 @@ public class Garagem {
     private String telefone;
     private String cnpj;
 
+    public Garagem() {
+        this.setNome("");
+        this.setEndereco("");
+        this.setTelefone("");
+        this.setCnpj("");
+    }
 
     public String getNome() {
-        return nome;
+        return nome.toUpperCase();
     }
 
     public void setNome(String nome) {
