@@ -26,7 +26,7 @@ public class ControllerCliente {
             novoCliente.setCep(leitura.nextLine());
             System.out.print(" CPF : ");
             novoCliente.setCpf(leitura.nextLine());
-            System.out.print(" Telefone : ");
+            System.out.print(" Telefone :");
             novoCliente.setTelefone(leitura.nextLine());
         } catch (Exception e) {
             System.out.println(e);

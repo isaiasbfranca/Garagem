@@ -51,6 +51,10 @@ public class ControllerGaragem {
     }
 
     public void editarGaragem() {
+        if (garagemList.isEmpty()) {
+            System.out.println("\n Não existe garagens cadastradas!!\n");
+            return;
+        }
         try {
             listarGaragem();
             System.out.printf("\nInforme o ID do cliente a ser alterado :\n");
@@ -65,7 +69,7 @@ public class ControllerGaragem {
             novaGaragem.setCnpj(leitura.nextLine());
         } catch (Exception e) {
             System.out.println(e);
-            System.exit(0);
+            return;
         }
 
         garagemList.set(i, novaGaragem);

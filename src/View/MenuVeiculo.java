@@ -2,12 +2,13 @@ package View;
 
 import Controller.ControllerVeiculo;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 class MenuVeiculo {
     private ControllerVeiculo funcoesVeiculo = new ControllerVeiculo();
 
-    void menu() {
+    void menu() throws IOException {
         Scanner leitura = new Scanner(System.in);
         int op;
 
@@ -23,9 +24,9 @@ class MenuVeiculo {
             System.out.println("#####    6 - VOLTAR     #######");
             System.out.println("##### 7 - Sair do programa ####");
             System.out.println("###############################");
-            System.out.println("Escolha uma opção: \n");
 
-            op = Integer.parseInt(leitura.nextLine());
+            System.out.println("Escolha uma opção: \n");
+            op = Integer.parseInt(leitura.next());
 
             switch (op) {
                 case 1:

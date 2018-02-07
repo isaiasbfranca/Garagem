@@ -14,6 +14,14 @@ public class ControllerVeiculo {
     private Scanner leitura = new Scanner(System.in);
     private int i;
 
+    public void validarGaragem(){
+        for(i = 0; i < garagemList.size(); i++){
+            if(!garagemList.get(i).getNome().contains(veiculo.getGaragem())){
+                System.out.println("Garagem inexistente");
+            }
+        }
+    }
+
     public void insereVeiculo() {
         veiculo = new Veiculo();
         System.out.println(" Garagem : ");
@@ -24,15 +32,11 @@ public class ControllerVeiculo {
         } else {
             for (i = 0; i < garagemList.size(); i++) {
                 if (garagemList.get(i).getNome().contains(veiculo.getGaragem())) {
-                    continue;
+                    break;
                 }
-//                if (!garagemList.get(i).getNome().contains(veiculo.getGaragem())) {
-//                    System.out.println("\n Garagem inexistente\n");
-//                    return;
-//                }
             }
+            validarGaragem();
         }
-
         System.out.println(" Nome : ");
         veiculo.setNome(leitura.nextLine());
         System.out.println(" Marca : ");
@@ -41,8 +45,10 @@ public class ControllerVeiculo {
         veiculo.setAno(leitura.nextLine());
         System.out.println(" Opcionais : ");
         veiculo.setOpciononais(leitura.nextLine());
-        System.out.println(" Portas :");
-        veiculo.setPortas(leitura.nextInt());
+        System.out.println(" Portas : ");
+        veiculo.setPortas(leitura.nextLine());
+
+        System.out.println("\n");
 
         veiculoList.add(veiculo);
     }
@@ -76,7 +82,7 @@ public class ControllerVeiculo {
             System.out.println(" Opcionais : ");
             veiculo.setOpciononais(leitura.nextLine());
             System.out.println(" Portas :");
-            veiculo.setPortas(leitura.nextInt());
+            veiculo.setPortas(leitura.nextLine());
         } catch (Exception e) {
             System.out.println(e);
             System.exit(0);

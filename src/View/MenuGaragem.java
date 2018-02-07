@@ -27,7 +27,7 @@ class MenuGaragem {
             System.out.println("##### 8 - Sair do programa ####");
             System.out.println("###############################");
 
-            System.out.println("Digite uma opção: ");
+            System.out.println("Digite uma opção: \n");
             op = Integer.parseInt(option.next());
 
             switch (op) {

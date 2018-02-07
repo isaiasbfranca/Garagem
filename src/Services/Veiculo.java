@@ -4,7 +4,7 @@ public class Veiculo {
     private String nome;
     private String marca;
     private String ano;
-    private int portas;
+    private String portas;
     private String opciononais;
     private String garagem;
 
@@ -12,7 +12,7 @@ public class Veiculo {
         this.setNome("");
         this.setMarca("");
         this.setAno("");
-        this.setPortas(0);
+        this.setPortas("");
         this.setOpciononais("");
     }
 
@@ -48,11 +48,11 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public int getPortas() {
+    public String getPortas() {
         return portas;
     }
 
-    public void setPortas(int portas) {
+    public void setPortas(String portas) {
         this.portas = portas;
     }
 
@@ -64,15 +64,5 @@ public class Veiculo {
         this.opciononais = opciononais;
     }
 
-    @Override
-    public String toString() {
-        return "Veiculo{" +
-                "nome='" + nome + '\'' +
-                ", marca='" + marca + '\'' +
-                ", ano='" + ano + '\'' +
-                ", portas=" + portas +
-                ", opciononais='" + opciononais + '\'' +
-                ", garagem='" + garagem + '\'' +
-                '}';
-    }
+
 }
