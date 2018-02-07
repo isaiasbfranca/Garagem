@@ -14,13 +14,6 @@ public class ControllerVeiculo {
     private Scanner leitura = new Scanner(System.in);
     private int i;
 
-    public void validarGaragem(){
-        for(i = 0; i < garagemList.size(); i++){
-            if(!garagemList.get(i).getNome().contains(veiculo.getGaragem())){
-                System.out.println("Garagem inexistente");
-            }
-        }
-    }
 
     public void insereVeiculo() {
         veiculo = new Veiculo();
@@ -34,8 +27,16 @@ public class ControllerVeiculo {
                 if (garagemList.get(i).getNome().contains(veiculo.getGaragem())) {
                     break;
                 }
+//                else {
+//                    for (int j = 0; j < garagemList.size(); j--){
+//                        if (!garagemList.get(i).getNome().contains(veiculo.getGaragem())){
+//                            System.out.println("Garagem inexistente");
+//                            System.exit(j);
+//
+//                        }
+//                    }
+//                }
             }
-            validarGaragem();
         }
         System.out.println(" Nome : ");
         veiculo.setNome(leitura.nextLine());
